@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Models;
-use App\Models\Blog;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class blog_comment extends Model
+class ProductImage extends Model
 {
     use HasFactory;
-    protected $table = 'blog_comment';
+    protected $table = 'product_images';
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function  Blogs() {
-        return $this->belongsTo(blogs::class, 'blog_id', 'id');
+    public function product(){
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }
